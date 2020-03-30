@@ -1,0 +1,1 @@
+var salaryService = require('./salary');

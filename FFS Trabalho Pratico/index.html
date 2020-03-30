@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form input,
+      form select,
+      form button {
+        margin: 10px;
+        font-size: 1.6em;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="calcular" action="">
+      <label>KM percorridos:</label>
+      <input
+        type="text"
+        name="km"
+        placeholder="Digite o valor em KM  percorrido após a ultimo abastecimento(Abastecimento completo)"
+      />
+      <label>Total Litros:</label>
+      <input
+        type="text"
+        name="l"
+        placeholder="Digite Litros do ultimo abastecimento completo"
+      />
+      <button wm-submit>Pesquisar</button>
+    </form>
+    <div>
+      <h3>Total de KM por Litros:</h3>
+      <label id="total-km-litro"><strong>Resultado:</strong></label>
+    </div>
+    <script>
+      var resultado;
+      const form = document.forms[0];
+      form.onsubmit = function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        formData.append('ajax', true);
+
+        const km = formData.get('km');
+        const l = formData.get('l');
+
+        resultado = Math.floor(km / l);
+        console.log(resultado);
+
+        const div = document.querySelector('#total-km-litro');
+        div.innerHTML = `<label id="total-km-litro"><strong>Resultado: </strong>${resultado}</label>`;
+      };
+    </script>
+  </body>
+</html>

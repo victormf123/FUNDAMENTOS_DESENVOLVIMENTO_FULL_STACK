@@ -1,0 +1,12 @@
+Capitulo 05 - Aula 02
+===============================
+
+Check ✓
+
+(✓) Mostrar exemplo com setTimeout
+(✓) Mostrar exemplo com setInterval
+(✓) Cancelar setInterval com clearInterval
+
+Exrmplo: contador que mostra números de um em a cada segundo e, 
+quando o número for múltiplo de 5, mostra +0,5 após meio segundo.
+Cria botão para cancelar execução.
